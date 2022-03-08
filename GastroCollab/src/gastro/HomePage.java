@@ -1,22 +1,50 @@
 package gastro;
 
-/**
- * here we need to use events in java, that will affect the home page depending on the button pressed
- * When the user is logged in it will be displayed a different home page
- *
- * -------------before log in------
- * ***user can view general receipts
- * ***user can log in
- *
- *
- * -----------------when logged in------
- *  ***user can view general receipts
- *  ***user account can be accessed
- */
+import java.util.ArrayList;
+import java.util.Scanner;
 
+/**
+ * THIS WILL BE A TEST CLASS FOR
+ */
 
 public class HomePage {
     public static void main(String[] args) {
 
+        //initial variables and input
+        String item, unity;
+        int qty;
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Write the item: ");
+        item = scan.nextLine();
+
+        System.out.println("Write the quantity: ");
+        qty = scan.nextInt();
+
+        System.out.println("Write the unity: ");
+        unity = scan.next();
+
+        //space
+        System.out.println();
+
+
+        /**
+         * I have declared some initial variables  to take as input and pass them as arguments in an object
+         * these variables will be resigned to the constructor variables of the class
+         * IngredientConstructor
+         */
+
+        //line 1 - l1 - first line as the first object
+        IngredientConstructor l1 = new IngredientConstructor(item, qty, unity);
+
+
+        // Create an ArrayList object
+        //(Declaring List of IngredientConstructor type)
+        ArrayList<IngredientConstructor> ingredients = new ArrayList<IngredientConstructor>();
+
+        //now I could add an object to the Array list
+        ingredients.add(l1);
+        System.out.println(l1.toString());
     }
 }
