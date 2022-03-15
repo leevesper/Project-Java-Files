@@ -12,8 +12,9 @@ public class DisplayReceipt {
     public static void main(String[] args) {
 
         //initial variables and input
+        //count is the counter for the objects
         String item, unity, answer;
-        int qty;
+        int qty, count;
 
         //receipt class instance
         Receipt r = new Receipt();
@@ -21,8 +22,9 @@ public class DisplayReceipt {
         //initial inputs
         Scanner scan = new Scanner(System.in);
 
-        //initial answer - yes
+        //initial variables assignments
         answer = "y";
+        count = 0;
 
         while (Objects.equals(answer, "y")) {
             //for asking the user if he wants to add a new ingredient
@@ -48,20 +50,29 @@ public class DisplayReceipt {
              */
 
             //line 1 - l1 - first line as the first object
-            IngredientConstructor l1 = new IngredientConstructor(item, qty, unity);
+            //IngredientConstructor l1 = new IngredientConstructor(item, qty, unity);
 
 
             // Create an ArrayList object
             //(Declaring List of IngredientConstructor type)
             ArrayList<IngredientConstructor> ingredients = new ArrayList<IngredientConstructor>();
 
+            //before entering a loop, we need to update our count
+            count++;
+
+            //only loop one iteration, to generate only one object input
+            for (int i = 0; i < count; i++) {
+                ingredients.add(i, new IngredientConstructor(item, qty, unity));
+            }
+
 
             //now I can add an object to the Array list
-            ingredients.add(l1);
+            //ingredients.add(l1);
             //System.out.println(l1.toString());
-            for (int i = 0; i < ingredients.size(); i++) {
-                System.out.println(ingredients.get(i));
+            for (Object i : ingredients) {
+                System.out.println(i);
             }
+
 
 
             System.out.println("\nDo you want to add another ingredient? y/n");
