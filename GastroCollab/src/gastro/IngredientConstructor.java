@@ -10,6 +10,7 @@ public class IngredientConstructor {
         setName(name);
         setQuantity(quantity);
         setUnity(unity);
+        toString();
 
 
        /**
@@ -54,6 +55,7 @@ public class IngredientConstructor {
     // this module will produce a well formatted string showing an ingredient line
     @Override
     public String toString() {
-        return "Item -  " + name + ": " + quantity + unity + ".";
+        return "Item -  " + getName() + ": " + getQuantity() + getUnity() + ".";
     }
+
 }
