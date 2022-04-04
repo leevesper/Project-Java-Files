@@ -11,6 +11,9 @@ import java.util.Scanner;
 public class DisplayReceipt {
     public static void main(String[] args) {
 
+        //
+        System.out.println("Hello Alisson, my name is Norman Lee");
+
         //initial variables and input
         //count is the counter for the objects
         String item, unity, answer;
